@@ -10,7 +10,7 @@
 
 
 ## Cấu trúc thư mục bài Lab
-
+```
 LAB2/
 ├── README.md
 ├── QuanLyThuVien.sln
@@ -24,7 +24,7 @@ LAB2/
 ├── Forms/              # Giao diện WinForms (FrmMain, FrmDanhMuc, FrmSach,
 │                        #   FrmDocGia, FrmMuonTra, FrmThongKe)
 └── Database/            # Script tạo cơ sở dữ liệu (QuanLyThuVien.sql)
-
+```
 
 ## Hướng dẫn chạy chương trình
 1. Chạy script `Database/QuanLyThuVien.sql` trên SQL Server để tạo cơ sở dữ liệu `QuanLyThuVienDB`.
