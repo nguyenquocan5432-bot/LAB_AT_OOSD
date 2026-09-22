@@ -8,14 +8,9 @@
 - Mượn sách / Trả sách, tự động tính phí phạt trả trễ / mất / hư hỏng
 - Thống kê lượt mượn, sách quá hạn, sách mất, sách hư hỏng, tổng phí phạt theo khoảng thời gian
 
-## Công nghệ sử dụng
-- Ngôn ngữ: C#
-- Nền tảng: .NET (WinForms)
-- Cơ sở dữ liệu: Microsoft SQL Server
-- IDE: Visual Studio
 
 ## Cấu trúc thư mục bài Lab
-```
+
 LAB2/
 ├── README.md
 ├── QuanLyThuVien.sln
@@ -29,7 +24,7 @@ LAB2/
 ├── Forms/              # Giao diện WinForms (FrmMain, FrmDanhMuc, FrmSach,
 │                        #   FrmDocGia, FrmMuonTra, FrmThongKe)
 └── Database/            # Script tạo cơ sở dữ liệu (QuanLyThuVien.sql)
-```
+
 
 ## Hướng dẫn chạy chương trình
 1. Chạy script `Database/QuanLyThuVien.sql` trên SQL Server để tạo cơ sở dữ liệu `QuanLyThuVienDB`.
