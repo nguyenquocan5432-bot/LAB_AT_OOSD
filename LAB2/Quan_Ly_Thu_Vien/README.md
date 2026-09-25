@@ -8,11 +8,6 @@
 - Mượn sách / Trả sách, tự động tính phí phạt trả trễ / mất / hư hỏng
 - Thống kê lượt mượn, sách quá hạn, sách mất, sách hư hỏng, tổng phí phạt theo khoảng thời gian
 
-## Công nghệ sử dụng
-- Ngôn ngữ: C#
-- Nền tảng: .NET (WinForms)
-- Cơ sở dữ liệu: Microsoft SQL Server
-- IDE: Visual Studio
 
 ## Cấu trúc thư mục bài Lab
 ```
