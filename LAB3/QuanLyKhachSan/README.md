@@ -1,10 +1,10 @@
 # LAB 3 – Hệ thống Quản lý Khách sạn
 
 ## Thông tin sinh viên
-- Họ tên: ...
-- MSSV: ...
-- Lớp: ...
-- Tên bài Lab: Lab 3 - Hệ thống quản lý khách sạn (HUTECH)
+- Họ tên: Nguyễn Quốc An
+- MSSV: 1250080002
+- Lớp: CNPM1
+- Tên bài Lab: Lab 3 - Hệ thống quản lý khách sạn 
 
 ## Môi trường / Version
 - Visual Studio 2022 / 2026
