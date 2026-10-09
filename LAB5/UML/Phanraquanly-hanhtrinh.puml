@@ -1,0 +1,28 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam monochrome true
+skinparam backgroundColor white
+skinparam ArrowColor black
+skinparam usecaseBackgroundColor #F2F2F2
+skinparam activityBackgroundColor #F2F2F2
+skinparam dpi 180
+left to right direction
+title Phân rã quy trình "Quản lý tour - hành trình"
+actor "NV điều hành" as NV
+rectangle "Hệ thống quản lý công ty du lịch Văn Hóa Việt" {
+usecase "Quản lý tour - hành trình" as ROOT
+usecase "Thêm tour" as TOUR
+usecase "Thêm điểm dừng" as DUNG
+usecase "Gắn phương tiện\ntheo chặng" as PT
+usecase "Gắn điểm tham quan" as TQ
+usecase "Kiểm tra hạng sao\nkhách sạn 2-5" as SAO
+}
+NV -- ROOT
+TOUR ..> ROOT : <<extend>>
+DUNG ..> ROOT : <<extend>>
+PT ..> ROOT : <<extend>>
+TQ ..> ROOT : <<extend>>
+DUNG ..> SAO : <<include>>
+@enduml
