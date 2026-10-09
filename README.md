@@ -32,9 +32,3 @@ LAB4 và LAB5 sử dụng .NET Framework 4.7.2.
 
 Hướng dẫn riêng được ghi trong README của từng project.
 
-## Tài liệu LAB5
-
-- [Báo cáo Word](LAB5/BaoCao_QuanLyCongTyDuLich.docx)
-- [Mã nguồn](LAB5/QuanLyCongTyDuLich/)
-- [Script SQL](LAB5/QuanLyCongTyDuLich/Database/QuanLyCongTyDuLich.sql)
-- [Hướng dẫn chạy](LAB5/QuanLyCongTyDuLich/README.md)
