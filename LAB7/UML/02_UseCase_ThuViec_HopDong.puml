@@ -1,0 +1,48 @@
+@startuml UseCase_ThuViec_HopDong
+' Cau 4 - Use Case phan ra: tu luc nhan vao thu viec den khi ky hop dong chinh thuc
+skin rose
+left to right direction
+skinparam packageStyle rectangle
+
+actor "NV phòng nhân sự" as NS
+actor "Trưởng phòng ban" as TP
+actor "Giám đốc" as GD
+
+rectangle "Tuyển dụng - Thử việc - Ký hợp đồng" {
+  usecase "Lập quyết định\ntuyển dụng" as TD
+  usecase "Chọn phòng ban\ncó nhu cầu tuyển" as TD1
+  usecase "Ghi thời gian và\nmức lương thử việc" as TD2
+  usecase "Ghi điều khoản hai bên" as TD3
+  usecase "Lập hồ sơ nhân viên\n(trạng thái Thử việc)" as TD4
+  usecase "Ký quyết định\ntuyển dụng" as KYTD
+
+  usecase "Theo dõi nhân viên\nthử việc" as TV
+  usecase "Đánh giá kết quả\nthử việc" as DG
+  usecase "Chấm dứt thử việc" as CD
+
+  usecase "Ký hợp đồng\nchính thức" as HD
+  usecase "Chọn loại hợp đồng\n(dài hạn / ngắn hạn)" as HD1
+  usecase "Lập quyết định lương\n(lương cơ bản, phụ cấp)" as QDL
+  usecase "Lập quyết định chức vụ\nvà phụ cấp chức vụ" as QDCV
+  usecase "Lập hồ sơ BHYT, BHXH" as BH
+  usecase "Ký hợp đồng và\ncác quyết định" as KYHD
+}
+
+NS --> TD
+NS --> TV
+NS --> HD
+TP --> DG
+
+TD ..> TD1 : <<include>>
+TD ..> TD2 : <<include>>
+TD ..> TD3 : <<include>>
+TD ..> TD4 : <<include>>
+CD ..> DG : <<extend>>\n[không đạt]
+HD ..> HD1 : <<include>>
+HD ..> QDL : <<include>>
+QDCV ..> HD : <<extend>>\n[có chức vụ]
+BH ..> HD : <<extend>>\n[hợp đồng dài hạn]
+
+KYTD <-- GD
+KYHD <-- GD
+@enduml

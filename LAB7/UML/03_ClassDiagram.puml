@@ -1,0 +1,228 @@
+@startuml ClassDiagram_QuanLyNhanSu
+' Cau 1, Cau 2 - Bieu do lop phan tich (ID = thuoc tinh dinh danh)
+skin rose
+hide circle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 50
+
+abstract class QuyetDinh {
+  - SoQD : string {ID}
+  - NgayKy : Date
+  - NguoiKy : string
+  + Lap() : bool
+  + KyDuyet() : bool
+}
+
+class PhongBan {
+  - MaPB : string {ID}
+  - TenPB : string
+  - NhuCauTuyen : int
+  + Them() : bool
+  + DsNhanVien() : List<NhanVien>
+  + GiamNhuCau() : void
+}
+
+class ChucVu {
+  - MaCV : string {ID}
+  - TenCV : string
+  - PhuCapMacDinh : decimal
+  + Them() : bool
+}
+
+class CaLamViec {
+  - MaCa : string {ID}
+  - TenCa : string
+  - GioBatDau : Time
+  - GioKetThuc : Time
+  + Them() : bool
+}
+
+class NhanVien {
+  - MaNV : string {ID}
+  - HoTen : string
+  - NgaySinh : Date
+  - GioiTinh : string
+  - CCCD : string
+  - DiaChi : string
+  - DienThoai : string
+  - NgayVaoLam : Date
+  - TrangThai : {Thu viec, Chinh thuc, Nghi viec}
+  + ChuyenChinhThuc() : void
+  + ChamDutThuViec() : bool
+  + LichSuQuyetDinh() : List<QuyetDinh>
+}
+
+class QuyetDinhTuyenDung {
+  - NgayBatDauTV : Date
+  - NgayKetThucTV : Date
+  - LuongThuViec : decimal
+  - DieuKhoanCongTy : string
+  - DieuKhoanNhanVien : string
+  + LapQuyetDinh(nv, qd) : bool
+}
+
+class QuyetDinhLuong {
+  - NgayHieuLuc : Date
+  - LuongCoBan : decimal
+  - PhuCapLuong : decimal
+  - PhuCapDocHai : decimal
+  + LapQuyetDinh() : bool
+  + LayLuongHieuLuc(maNV, ngay) : QuyetDinhLuong
+}
+
+class QuyetDinhChucVu {
+  - NgayHieuLuc : Date
+  - PhuCapChucVu : decimal
+  + BoNhiem() : bool
+}
+
+class QuyetDinhKhenThuong {
+  - LoaiKT : {THANH_TICH, NGAY_LE, CUOI_NAM, LUONG_13}
+  - DoiTuong : {CA_NHAN, TAP_THE}
+  - LyDo : string
+  - SoTien : decimal
+  - HinhThucChi : {PHIEU_CHI, BANG_LUONG}
+  + LapQuyetDinh() : bool
+}
+
+class QuyetDinhKyLuat {
+  - DoiTuong : {CA_NHAN, TAP_THE}
+  - LyDo : string
+  - HinhThucKL : string
+  - SoTienPhat : decimal
+  - HinhThucThu : {PHIEU_THU, TRU_LUONG}
+  + LapQuyetDinh() : bool
+}
+
+class HopDongLaoDong {
+  - SoHD : string {ID}
+  - LoaiHD : {DAI_HAN, NGAN_HAN}
+  - NgayKy : Date
+  - NgayBatDau : Date
+  - NgayKetThuc : Date
+  - NoiDung : string
+  - TrangThai : string
+  + KyHopDong() : bool
+  + KetThuc() : void
+}
+
+class HoSoBaoHiem {
+  - MaHSBH : string {ID}
+  - SoBHXH : string
+  - SoBHYT : string
+  - NoiKCB : string
+  - NgayLap : Date
+  - TyLeBHXH : decimal
+  - TyLeBHYT : decimal
+  + LapHoSo() : bool
+  + TinhMucDong(lcb) : decimal
+}
+
+class KeHoachPhanCong {
+  - MaKH : string {ID}
+  - TuNgay : Date
+  - DenNgay : Date
+  - NguoiLap : string
+  + LapKeHoach(ds) : bool
+}
+
+class ChiTietPhanCong {
+  - MaCTPC : int {ID}
+  - NgayLam : Date
+  + KiemTraTrung() : bool
+}
+
+class BangChamCong {
+  - MaBCC : string {ID}
+  - Thang : int
+  - Nam : int
+  - SoNgayCong : decimal
+  - SoNgayNghiPhep : decimal
+  - SoNgayNghiKP : decimal
+  + LuuChamCong() : bool
+}
+
+class PhieuPhuTroi {
+  - SoPhieu : string {ID}
+  - NgayPhuTroi : Date
+  - HinhThuc : {TANG_CA, NGAY_LE, NGAY_NGHI}
+  - NguoiLap : string
+  + LapPhieu(ds) : bool
+}
+
+class ChiTietPhuTroi {
+  - SoPhieu + MaNV {ID}
+  - SoGio : decimal
+  + TinhTien(luongGio) : decimal
+}
+
+class PhieuChiKhenThuong {
+  - SoPhieuChi : string {ID}
+  - NgayChi : Date
+  - SoTien : decimal
+  - NguoiNhan : string
+  + LapPhieuChi() : bool
+}
+
+class PhieuThuNopPhat {
+  - SoPhieuThu : string {ID}
+  - NgayThu : Date
+  - SoTien : decimal
+  - NguoiNop : string
+  + LapPhieuThu() : bool
+}
+
+class BangLuong {
+  - MaBL : string {ID}
+  - Thang : int
+  - Nam : int
+  - LuongCoBan : decimal
+  - SoNgayCong : decimal
+  - LuongTheoCong : decimal
+  - TongPhuCap : decimal
+  - TienPhuTroi : decimal
+  - TienThuong : decimal
+  - TienPhat : decimal
+  - TruBHXH : decimal
+  - TruBHYT : decimal
+  - ThucLanh : decimal
+  + TinhLuongThang(thang, nam) : bool
+}
+
+' ---- Ke thua quyet dinh ----
+QuyetDinh <|-- QuyetDinhTuyenDung
+QuyetDinh <|-- QuyetDinhLuong
+QuyetDinh <|-- QuyetDinhChucVu
+QuyetDinh <|-- QuyetDinhKhenThuong
+QuyetDinh <|-- QuyetDinhKyLuat
+
+' ---- Lien ket ----
+PhongBan "1" -- "1..*" NhanVien : gồm >
+NhanVien "1" -- "1" QuyetDinhTuyenDung : được tuyển bởi >
+PhongBan "1" -- "0..*" QuyetDinhTuyenDung : thử việc tại <
+NhanVien "1" -- "0..*" HopDongLaoDong : ký >
+HopDongLaoDong "1" -- "0..1" HoSoBaoHiem : dài hạn có >
+NhanVien "1" -- "0..*" QuyetDinhLuong : nhận >
+NhanVien "1" -- "0..*" QuyetDinhChucVu : nhận >
+ChucVu "1" -- "0..*" QuyetDinhChucVu : bổ nhiệm <
+
+PhongBan "1" -- "0..*" KeHoachPhanCong : lập >
+KeHoachPhanCong "1" *-- "1..*" ChiTietPhanCong
+NhanVien "1" -- "0..*" ChiTietPhanCong : được phân công >
+CaLamViec "1" -- "0..*" ChiTietPhanCong : theo ca <
+
+NhanVien "1" -- "0..*" BangChamCong : chấm công >
+PhieuPhuTroi "1" *-- "1..*" ChiTietPhuTroi
+NhanVien "1" -- "0..*" ChiTietPhuTroi : tham gia >
+
+QuyetDinhKhenThuong "0..*" -- "0..1" NhanVien : cá nhân >
+QuyetDinhKhenThuong "0..*" -- "0..1" PhongBan : tập thể >
+QuyetDinhKhenThuong "1" -- "0..1" PhieuChiKhenThuong : chi qua >
+QuyetDinhKyLuat "0..*" -- "0..1" NhanVien : cá nhân >
+QuyetDinhKyLuat "0..*" -- "0..1" PhongBan : tập thể >
+QuyetDinhKyLuat "1" -- "0..1" PhieuThuNopPhat : thu qua >
+
+NhanVien "1" -- "0..*" BangLuong : lĩnh >
+@enduml

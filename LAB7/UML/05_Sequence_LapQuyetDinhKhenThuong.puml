@@ -1,0 +1,63 @@
+@startuml Sequence_LapQuyetDinhKhenThuong
+' Cau 6 - Sequence Diagram nghiep vu "Lap quyet dinh khen thuong" (ca nhan hoac tap the phong ban)
+skin rose
+autonumber
+skinparam sequenceMessageAlign left
+
+actor "NV phòng nhân sự" as NS
+boundary ": FrmKhenThuongKyLuat" as F
+control ": KhenThuongService" as S
+entity ": NhanVien" as NV
+entity ": PhongBan" as PB
+entity ": QuyetDinhKhenThuong" as QD
+entity ": PhieuChiKhenThuong" as PC
+
+NS -> F : Mở form "Khen thưởng / Kỷ luật"
+activate F
+F -> NV : DsNhanVienDangLam()
+activate NV
+NV --> F : danh sách nhân viên
+deactivate NV
+F -> PB : DsPhongBan()
+activate PB
+PB --> F : danh sách phòng ban
+deactivate PB
+
+NS -> F : Chọn đối tượng (cá nhân / tập thể),\nloại khen thưởng, lý do, số tiền,\nhình thức chi, người ký (giám đốc)
+NS -> F : Nhấn "Lập quyết định khen thưởng"
+F -> S : LapQuyetDinhKhenThuong(kt)
+activate S
+S -> S : Kiểm tra loại, đối tượng,\nlý do, số tiền > 0, người ký
+
+alt dữ liệu không hợp lệ
+  S --> F : KetQuaXuLy.Fail(lý do)
+else hợp lệ
+  S -> S : BeginTransaction()
+  opt đối tượng = TAP_THE và hình thức = BANG_LUONG
+    S -> NV : Đếm nhân viên đang làm của phòng ban
+    activate NV
+    NV --> S : soNV
+    deactivate NV
+    alt soNV = 0
+      S -> S : Rollback()
+      S --> F : Fail("Phòng ban không có nhân viên\nđể chia thưởng qua bảng lương")
+    end
+  end
+  S -> QD : tạo QuyetDinhKhenThuong(SoQD, NgayKy, LoaiKT,\nDoiTuong, MaNV | MaPB, LyDo, SoTien, HinhThucChi, NguoiKy)
+  activate QD
+  deactivate QD
+  alt HinhThucChi = PHIEU_CHI
+    S -> PC : tạo PhieuChiKhenThuong(SoPhieuChi, SoQD,\nNgayChi, SoTien, NguoiNhan)
+    activate PC
+    deactivate PC
+  else HinhThucChi = BANG_LUONG
+    S -> S : Ghi nhận cộng vào bảng lương\ntháng của ngày ký
+  end
+  S -> S : Commit()
+  S --> F : KetQuaXuLy.Ok(soQD)
+end
+deactivate S
+F -> F : FormHelper.Bao(kq);\nNapDs()
+F --> NS : Thông báo kết quả,\ncập nhật danh sách quyết định
+deactivate F
+@enduml

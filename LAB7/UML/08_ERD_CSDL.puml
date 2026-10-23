@@ -1,0 +1,167 @@
+@startuml ERD_QuanLyNhanSu
+' Luoc do quan he CSDL QuanLyNhanSu (PK = khoa chinh, FK = khoa ngoai)
+skin rose
+hide circle
+hide methods
+skinparam linetype ortho
+
+entity PhongBan {
+  * MaPB : VARCHAR(10) <<PK>>
+  --
+  TenPB : NVARCHAR(100)
+  NhuCauTuyen : INT
+}
+entity ChucVu {
+  * MaCV : VARCHAR(10) <<PK>>
+  --
+  TenCV : NVARCHAR(100)
+  PhuCapMacDinh : DECIMAL
+}
+entity CaLamViec {
+  * MaCa : VARCHAR(10) <<PK>>
+  --
+  TenCa, GioBatDau, GioKetThuc
+}
+entity NhanVien {
+  * MaNV : VARCHAR(20) <<PK>>
+  --
+  HoTen, NgaySinh, GioiTinh
+  CCCD <<UNIQUE>>
+  DiaChi, DienThoai, NgayVaoLam
+  TrangThai
+  MaPB <<FK>>
+}
+entity QuyetDinhTuyenDung {
+  * SoQD <<PK>>
+  --
+  MaNV <<FK, UNIQUE>>
+  MaPB <<FK>>
+  NgayKy, NgayBatDauTV, NgayKetThucTV
+  LuongThuViec, DieuKhoanCongTy
+  DieuKhoanNhanVien, NguoiKy
+}
+entity HopDongLaoDong {
+  * SoHD <<PK>>
+  --
+  MaNV <<FK>>
+  LoaiHD, NgayKy, NgayBatDau
+  NgayKetThuc, NoiDung, TrangThai
+}
+entity HoSoBaoHiem {
+  * MaHSBH <<PK>>
+  --
+  MaNV <<FK, UNIQUE>>
+  SoHD <<FK>>
+  SoBHXH, SoBHYT <<UNIQUE>>
+  NoiKCB, NgayLap, TyLeBHXH, TyLeBHYT
+}
+entity QuyetDinhLuong {
+  * SoQD <<PK>>
+  --
+  MaNV <<FK>>
+  NgayKy, NgayHieuLuc, LuongCoBan
+  PhuCapLuong, PhuCapDocHai, NguoiKy
+}
+entity QuyetDinhChucVu {
+  * SoQD <<PK>>
+  --
+  MaNV <<FK>>
+  MaCV <<FK>>
+  NgayKy, NgayHieuLuc, PhuCapChucVu, NguoiKy
+}
+entity KeHoachPhanCong {
+  * MaKH <<PK>>
+  --
+  MaPB <<FK>>
+  TuNgay, DenNgay, NguoiLap
+}
+entity ChiTietPhanCong {
+  * MaCTPC <<PK>>
+  --
+  MaKH <<FK>>
+  MaNV <<FK>>
+  MaCa <<FK>>
+  NgayLam
+}
+entity BangChamCong {
+  * MaBCC <<PK>>
+  --
+  MaNV <<FK>>
+  Thang, Nam, SoNgayCong
+  SoNgayNghiPhep, SoNgayNghiKP
+}
+entity PhieuPhuTroi {
+  * SoPhieu <<PK>>
+  --
+  MaPB <<FK>>
+  NgayPhuTroi, HinhThuc, NguoiLap
+}
+entity ChiTietPhuTroi {
+  * SoPhieu <<PK, FK>>
+  * MaNV <<PK, FK>>
+  --
+  SoGio
+}
+entity QuyetDinhKhenThuong {
+  * SoQD <<PK>>
+  --
+  MaNV <<FK, NULL>>
+  MaPB <<FK, NULL>>
+  NgayKy, LoaiKT, DoiTuong, LyDo
+  SoTien, HinhThucChi, NguoiKy
+}
+entity PhieuChiKhenThuong {
+  * SoPhieuChi <<PK>>
+  --
+  SoQD <<FK, UNIQUE>>
+  NgayChi, SoTien, NguoiNhan
+}
+entity QuyetDinhKyLuat {
+  * SoQD <<PK>>
+  --
+  MaNV <<FK, NULL>>
+  MaPB <<FK, NULL>>
+  NgayKy, DoiTuong, LyDo, HinhThucKL
+  SoTienPhat, HinhThucThu, NguoiKy
+}
+entity PhieuThuNopPhat {
+  * SoPhieuThu <<PK>>
+  --
+  SoQD <<FK, UNIQUE>>
+  NgayThu, SoTien, NguoiNop
+}
+entity BangLuong {
+  * MaBL <<PK>>
+  --
+  MaNV <<FK>>
+  Thang, Nam, LuongCoBan, SoNgayCong
+  LuongTheoCong, PhuCap..., TienPhuTroi
+  TienThuong, TienPhat, TruBHXH, TruBHYT
+  ThucLanh
+}
+
+PhongBan ||--o{ NhanVien
+NhanVien ||--|| QuyetDinhTuyenDung
+PhongBan ||--o{ QuyetDinhTuyenDung
+NhanVien ||--o{ HopDongLaoDong
+HopDongLaoDong ||--o| HoSoBaoHiem
+NhanVien ||--o| HoSoBaoHiem
+NhanVien ||--o{ QuyetDinhLuong
+NhanVien ||--o{ QuyetDinhChucVu
+ChucVu ||--o{ QuyetDinhChucVu
+PhongBan ||--o{ KeHoachPhanCong
+KeHoachPhanCong ||--|{ ChiTietPhanCong
+NhanVien ||--o{ ChiTietPhanCong
+CaLamViec ||--o{ ChiTietPhanCong
+NhanVien ||--o{ BangChamCong
+PhongBan ||--o{ PhieuPhuTroi
+PhieuPhuTroi ||--|{ ChiTietPhuTroi
+NhanVien ||--o{ ChiTietPhuTroi
+NhanVien |o--o{ QuyetDinhKhenThuong
+PhongBan |o--o{ QuyetDinhKhenThuong
+QuyetDinhKhenThuong ||--o| PhieuChiKhenThuong
+NhanVien |o--o{ QuyetDinhKyLuat
+PhongBan |o--o{ QuyetDinhKyLuat
+QuyetDinhKyLuat ||--o| PhieuThuNopPhat
+NhanVien ||--o{ BangLuong
+@enduml

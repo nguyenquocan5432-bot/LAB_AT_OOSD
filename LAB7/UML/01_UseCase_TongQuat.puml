@@ -1,0 +1,54 @@
+@startuml UseCase_TongQuat
+' Cau 3 - Use Case tong quat he thong quan ly nhan su
+skin rose
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle default
+
+actor "NV phòng nhân sự" as NS
+actor "Trưởng phòng ban" as TP
+actor "Ban chấm công" as BCC
+actor "Giám đốc" as GD
+actor "Kế toán tiền lương" as KT
+actor "Quản trị hệ thống" as QT
+
+rectangle "Hệ thống Quản lý nhân sự - Công ty sơn Đông Á" {
+  usecase "Quản lý danh mục\n(phòng ban, chức vụ, ca làm việc)" as UC01
+  usecase "Lập quyết định tuyển dụng" as UC02
+  usecase "Đánh giá thử việc" as UC03
+  usecase "Ký hợp đồng lao động" as UC04
+  usecase "Lập quyết định lương" as UC05
+  usecase "Lập quyết định chức vụ" as UC06
+  usecase "Quản lý hồ sơ BHYT, BHXH" as UC07
+  usecase "Lập kế hoạch phân công tuần" as UC08
+  usecase "Chấm công tháng" as UC09
+  usecase "Lập phiếu ghi nhận phụ trội" as UC10
+  usecase "Lập quyết định khen thưởng" as UC11
+  usecase "Lập quyết định kỷ luật" as UC12
+  usecase "Ký duyệt quyết định" as UC13
+  usecase "Tính bảng lương tháng" as UC14
+  usecase "Lập phiếu chi khen thưởng /\nphiếu thu nộp phạt" as UC15
+  usecase "Tra cứu nhân viên,\nlịch sử quyết định" as UC16
+}
+
+QT --> UC01
+NS --> UC02
+NS --> UC04
+NS --> UC05
+NS --> UC06
+NS --> UC07
+NS --> UC11
+NS --> UC12
+NS --> UC16
+TP --> UC03
+TP --> UC08
+BCC --> UC09
+BCC --> UC10
+
+UC02 <-- GD
+UC04 <-- GD
+UC13 <-- GD
+UC16 <-- GD
+UC14 <-- KT
+UC15 <-- KT
+@enduml

@@ -1,0 +1,60 @@
+@startuml Sequence_TinhBangLuong
+' Bieu do tuan tu bo sung: Tinh bang luong thang
+skin rose
+autonumber
+skinparam sequenceMessageAlign left
+
+actor "Kế toán tiền lương" as KT
+boundary ": FrmBangLuong" as F
+control ": LuongService" as S
+entity ": BangChamCong" as CC
+entity ": QuyetDinhLuong /\nQuyetDinhChucVu" as QD
+entity ": HoSoBaoHiem" as BH
+entity ": PhieuPhuTroi" as PT
+entity ": QĐ khen thưởng /\nQĐ kỷ luật" as KTL
+entity ": BangLuong" as BL
+
+KT -> F : Chọn tháng, năm; nhấn "Tính lương tháng"
+activate F
+F -> S : TinhLuongThang(thang, nam)
+activate S
+S -> S : BeginTransaction()
+S -> CC : Lấy bảng chấm công của tháng
+activate CC
+CC --> S : dsCong
+deactivate CC
+alt dsCong rỗng
+  S -> S : Rollback()
+  S --> F : Fail("Chưa có bảng chấm công")
+else có chấm công
+  S -> BL : Xóa bảng lương cũ của tháng (tính lại)
+  loop mỗi nhân viên trong dsCong
+    S -> QD : Quyết định lương, chức vụ hiệu lực đến cuối tháng
+    activate QD
+    QD --> S : LCB, phụ cấp (thử việc: lương thử việc)
+    deactivate QD
+    S -> BH : Hồ sơ bảo hiểm (nếu HĐ dài hạn)
+    activate BH
+    BH --> S : tỷ lệ BHXH 8%, BHYT 1.5%
+    deactivate BH
+    S -> PT : Tổng giờ phụ trội trong tháng
+    activate PT
+    PT --> S : soGio
+    deactivate PT
+    S -> KTL : Thưởng (BANG_LUONG), phạt (TRU_LUONG) trong tháng
+    activate KTL
+    KTL --> S : tienThuong, tienPhat
+    deactivate KTL
+    S -> S : ThucLanh = LCB/26 x công + phụ cấp\n+ giờ PT x LCB/26/8 x 1.5 + thưởng - phạt - BH
+    S -> BL : tạo BangLuong(MaNV, Thang, Nam, ..., ThucLanh)
+    activate BL
+    deactivate BL
+  end
+  S -> S : Commit()
+  S --> F : Ok("Tính lương thành công cho n nhân viên")
+end
+deactivate S
+F -> S : DsBangLuong(thang, nam)
+F --> KT : Hiển thị bảng lương, tổng thực lãnh
+deactivate F
+@enduml

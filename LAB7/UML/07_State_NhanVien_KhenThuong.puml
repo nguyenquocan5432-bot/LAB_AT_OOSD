@@ -1,0 +1,29 @@
+@startuml State_NhanVien_KhenThuong
+' Bieu do trang thai: NhanVien va QuyetDinhKhenThuong
+skin rose
+
+state "NhanVien" as NVS {
+  [*] --> ThuViec : Lập quyết định tuyển dụng
+  state "Thử việc" as ThuViec
+  state "Chính thức" as ChinhThuc
+  state "Nghỉ việc" as NghiViec
+  ThuViec --> ChinhThuc : Ký hợp đồng\n[hết thời gian thử việc, đạt]
+  ThuViec --> NghiViec : Chấm dứt thử việc\n[không đạt]
+  ChinhThuc --> ChinhThuc : QĐ lương / QĐ chức vụ\n(tăng lương, bổ nhiệm)
+  ChinhThuc --> NghiViec : Thôi việc / hết hợp đồng
+  NghiViec --> [*]
+}
+
+state "QuyetDinhKhenThuong" as KTS {
+  [*] --> DaLap : Lập quyết định\n(giám đốc ký)
+  state "Đã lập" as DaLap
+  state "Đã chi (phiếu chi)" as DaChi
+  state "Chờ cộng lương" as ChoLuong
+  state "Đã cộng vào lương" as DaCong
+  DaLap --> DaChi : [HinhThucChi = PHIEU_CHI]\n/ lập phiếu chi
+  DaLap --> ChoLuong : [HinhThucChi = BANG_LUONG]
+  ChoLuong --> DaCong : Tính bảng lương tháng
+  DaChi --> [*]
+  DaCong --> [*]
+}
+@enduml

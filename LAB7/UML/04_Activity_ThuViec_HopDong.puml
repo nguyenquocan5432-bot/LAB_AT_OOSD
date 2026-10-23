@@ -1,0 +1,51 @@
+@startuml Activity_ThuViec_HopDong
+' Cau 5 - Activity Diagram cho Cau 4: tu luc nhan vao thu viec den khi ky hop dong chinh thuc
+skin rose
+
+|Trưởng phòng ban|
+start
+:Đề xuất nhu cầu tuyển dụng;
+|NV phòng nhân sự|
+:Tiếp nhận ứng viên trúng tuyển;
+:Soạn quyết định tuyển dụng
+(phòng ban, thời gian thử việc,
+lương thử việc, điều khoản hai bên);
+|Giám đốc|
+:Ký quyết định tuyển dụng;
+|NV phòng nhân sự|
+:Lập hồ sơ nhân viên
+(trạng thái "Thử việc");
+:Giảm nhu cầu tuyển của phòng ban;
+|Nhân viên|
+:Thử việc tại phòng ban;
+|Trưởng phòng ban|
+:Đánh giá kết quả thử việc;
+if (Đạt yêu cầu?) then ([không đạt])
+  |NV phòng nhân sự|
+  :Chấm dứt thử việc
+  (trạng thái "Nghỉ việc");
+  stop
+else ([đạt])
+  |NV phòng nhân sự|
+  :Chọn loại hợp đồng
+  (dài hạn / ngắn hạn), soạn hợp đồng;
+  :Soạn quyết định lương
+  (lương cơ bản, phụ cấp lương, độc hại);
+  if (Có bổ nhiệm chức vụ?) then ([có])
+    :Soạn quyết định chức vụ
+    và phụ cấp chức vụ;
+  else ([không])
+  endif
+endif
+|Giám đốc|
+:Ký hợp đồng và các quyết định;
+|Nhân viên|
+:Ký hợp đồng lao động;
+|NV phòng nhân sự|
+if (Hợp đồng dài hạn?) then ([có])
+  :Lập hồ sơ BHYT, BHXH;
+else ([ngắn hạn])
+endif
+:Cập nhật nhân viên "Chính thức";
+stop
+@enduml
