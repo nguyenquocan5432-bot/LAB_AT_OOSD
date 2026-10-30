@@ -9,9 +9,10 @@ namespace QuanLyNhanSu.Forms
     {
         public static void Nap(ComboBox cbo, DataTable dt, string display, string value)
         {
-            cbo.DataSource = dt;
+            // dat DisplayMember/ValueMember truoc DataSource de su kien SelectedIndexChanged doc dung SelectedValue
             cbo.DisplayMember = display;
             cbo.ValueMember = value;
+            cbo.DataSource = dt;
             if (dt.Rows.Count > 0) cbo.SelectedIndex = 0;
         }
 
