@@ -1,1 +1,85 @@
-<mxfile host="app.diagrams.net"><diagram name="H1_UseCase_TongQuat" id="d1"><mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="840" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="c2" value="Hệ thống Quản lý thư viện" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fillColor=#FFFFF5;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=14;spacingTop=6;" vertex="1" parent="1"><mxGeometry x="230.0" y="20.0" width="760.0" height="800.0" as="geometry"/></mxCell><mxCell id="c3" value="Thủ thư" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1"><mxGeometry x="70.0" y="254.0" width="40.0" height="80.0" as="geometry"/></mxCell><mxCell id="c4" value="Quản lý độc giả" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="330.8" y="60.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c5" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c3" target="c4"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c6" value="Cấp thẻ thư viện" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="369.7" y="146.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c7" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c3" target="c6"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c8" value="Gia hạn thẻ thư viện" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="387.8" y="232.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c9" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c3" target="c8"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c10" value="Tra cứu đầu sách" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="387.8" y="318.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c11" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c3" target="c10"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c12" value="Lập phiếu mượn sách" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="369.7" y="404.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c13" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c3" target="c12"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c14" value="Trả sách" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="330.8" y="490.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c15" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c3" target="c14"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c16" value="Quản lý thư viện" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1"><mxGeometry x="1110.0" y="209.0" width="40.0" height="80.0" as="geometry"/></mxCell><mxCell id="c17" value="Quản lý danh mục&lt;br&gt;(nhân viên, thể loại, NXB)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="741.7" y="120.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c18" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c16" target="c17"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c19" value="Quản lý đầu sách" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="720.0" y="230.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c20" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c16" target="c19"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c21" value="Thống kê mượn – trả,&lt;br&gt;sách quá hạn, phí phạt" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="741.7" y="340.0" width="240.0" height="58.0" as="geometry"/></mxCell><mxCell id="c22" value="" style="endArrow=none;html=1;strokeColor=#A80036;" edge="1" parent="1" source="c16" target="c21"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c23" value="Kiểm tra điều kiện mượn&lt;br&gt;(thẻ còn hạn, đã đóng lệ phí,&lt;br&gt;không quá hạn, tối đa 3 cuốn)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="720.0" y="560.0" width="240.0" height="70.0" as="geometry"/></mxCell><mxCell id="c24" value="Lập phiếu phạt&lt;br&gt;(trễ hạn / mất / hư hỏng)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFECE;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1"><mxGeometry x="720.0" y="690.0" width="240.0" height="62.0" as="geometry"/></mxCell><mxCell id="c25" value="«include»" style="endArrow=open;endSize=10;dashed=1;html=1;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=11;labelBackgroundColor=#FFFFF5;" edge="1" parent="1" source="c12" target="c23"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c26" value="«extend»" style="endArrow=open;endSize=10;dashed=1;html=1;strokeColor=#A80036;fontFamily=Times New Roman;fontSize=11;labelBackgroundColor=#FFFFF5;" edge="1" parent="1" source="c24" target="c14"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxfile host="app.diagrams.net">
+  <diagram name="H1_UseCase_TongQuat" id="d1">
+    <mxGraphModel dx="1321" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="840" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontFamily=Times New Roman;fontSize=14;spacingTop=6;" value="Hệ thống Quản lý thư viện" vertex="1">
+          <mxGeometry height="800" width="760" x="230" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Times New Roman;fontSize=13;" value="Thủ thư" vertex="1">
+          <mxGeometry height="80" width="40" x="70" y="254" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Quản lý độc giả" vertex="1">
+          <mxGeometry height="58" width="240" x="330.8" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Cấp thẻ thư viện" vertex="1">
+          <mxGeometry height="58" width="240" x="369.7" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Gia hạn thẻ thư viện" vertex="1">
+          <mxGeometry height="58" width="240" x="387.8" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Tra cứu đầu sách" vertex="1">
+          <mxGeometry height="58" width="240" x="387.8" y="318" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Lập phiếu mượn sách" vertex="1">
+          <mxGeometry height="58" width="240" x="369.7" y="404" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Trả sách" vertex="1">
+          <mxGeometry height="58" width="240" x="330.8" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Times New Roman;fontSize=13;" value="Quản lý thư viện" vertex="1">
+          <mxGeometry height="80" width="40" x="1110" y="209" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Quản lý danh mục&lt;br&gt;(nhân viên, thể loại, NXB)" vertex="1">
+          <mxGeometry height="58" width="240" x="741.7" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" edge="1" parent="1" source="c16" style="endArrow=none;html=1;" target="c17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Quản lý đầu sách" vertex="1">
+          <mxGeometry height="58" width="240" x="720" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" edge="1" parent="1" source="c16" style="endArrow=none;html=1;" target="c19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Thống kê mượn – trả,&lt;br&gt;sách quá hạn, phí phạt" vertex="1">
+          <mxGeometry height="58" width="240" x="741.7" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" edge="1" parent="1" source="c16" style="endArrow=none;html=1;" target="c21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Kiểm tra điều kiện mượn&lt;br&gt;(thẻ còn hạn, đã đóng lệ phí,&lt;br&gt;không quá hạn, tối đa 3 cuốn)" vertex="1">
+          <mxGeometry height="70" width="240" x="720" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Lập phiếu phạt&lt;br&gt;(trễ hạn / mất / hư hỏng)" vertex="1">
+          <mxGeometry height="62" width="240" x="720" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" edge="1" parent="1" source="c12" style="endArrow=open;endSize=10;dashed=1;html=1;fontFamily=Times New Roman;fontSize=11;labelBackgroundColor=#FFFFF5;" target="c23" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c26" edge="1" parent="1" source="c24" style="endArrow=open;endSize=10;dashed=1;html=1;fontFamily=Times New Roman;fontSize=11;labelBackgroundColor=#FFFFF5;" target="c14" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
