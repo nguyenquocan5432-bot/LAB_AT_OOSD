@@ -7,3 +7,4 @@
 [Báo cáo](BaoCao_QuanLyNhanSu.docx)
 
 [Sơ đồ draw.io](../IMAGES/LAB7/)
+
