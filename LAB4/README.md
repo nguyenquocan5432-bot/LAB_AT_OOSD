@@ -5,3 +5,5 @@
 [Mã nguồn và hướng dẫn chạy](EShopping/)
 
 [Báo cáo](BaoCao_Lab4_eShopping.docx)
+
+[Sơ đồ draw.io](../IMAGES/LAB4/)

@@ -2,4 +2,6 @@
 
 Tài liệu phân tích Use Case và sơ đồ UML.
 
-[Đặc tả Use Case thư viện trực tuyến](Dac_ta_use_case_Thu_vien_truc_tuyen.docx)
+[Báo cáo](LAB1_NguyenQuocAn_1250080002_CNPM1.docx)
+
+[Sơ đồ draw.io](../IMAGES/LAB1/)

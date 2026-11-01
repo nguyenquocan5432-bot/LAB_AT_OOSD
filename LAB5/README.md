@@ -5,3 +5,5 @@
 [Mã nguồn và hướng dẫn chạy](QuanLyCongTyDuLich/)
 
 [Báo cáo](BaoCao_QuanLyCongTyDuLich.docx)
+
+[Sơ đồ draw.io](../IMAGES/LAB5/)
