@@ -1,0 +1,118 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="UseCase_TongQuat" id="d1">
+    <mxGraphModel dx="1471" dy="940" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1220" pageHeight="890" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontFamily=Times New Roman;fontSize=14;spacingTop=6;" value="Hệ thống Quản lý cho thuê văn phòng cao ốc" vertex="1">
+          <mxGeometry height="840" width="780" x="230" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Times New Roman;fontSize=13;" value="NV kinh doanh" vertex="1">
+          <mxGeometry height="80" width="40" x="90" y="213" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Quản lý khách hàng thuê" vertex="1">
+          <mxGeometry height="58" width="240" x="276.4" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Tra cứu phòng trống,&lt;br&gt;giá thuê" vertex="1">
+          <mxGeometry height="58" width="240" x="309.6" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Lập hợp đồng thuê&lt;br&gt;văn phòng" vertex="1">
+          <mxGeometry height="58" width="240" x="320" y="234" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Lập phiếu gia hạn" vertex="1">
+          <mxGeometry height="58" width="240" x="309.6" y="316" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Thanh lý hợp đồng" vertex="1">
+          <mxGeometry height="58" width="240" x="276.4" y="398" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" edge="1" parent="1" source="c3" style="endArrow=none;html=1;" target="c12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Times New Roman;fontSize=13;" value="Kế toán" vertex="1">
+          <mxGeometry height="80" width="40" x="90" y="602" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Thu tiền thuê hằng tháng" vertex="1">
+          <mxGeometry height="58" width="240" x="296.2" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" edge="1" parent="1" source="c14" style="endArrow=none;html=1;" target="c15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Lập hóa đơn dịch vụ&lt;br&gt;cuối tháng" vertex="1">
+          <mxGeometry height="58" width="240" x="317.4" y="582" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" edge="1" parent="1" source="c14" style="endArrow=none;html=1;" target="c17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Thanh toán hóa đơn&lt;br&gt;dịch vụ" vertex="1">
+          <mxGeometry height="58" width="240" x="317.4" y="664" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" edge="1" parent="1" source="c14" style="endArrow=none;html=1;" target="c19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Thu tiền phạt vi phạm" vertex="1">
+          <mxGeometry height="58" width="240" x="296.2" y="746" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" edge="1" parent="1" source="c14" style="endArrow=none;html=1;" target="c21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Times New Roman;fontSize=13;fillColor=#fff2cc;strokeColor=#d6b656;" value="NV an ninh" vertex="1">
+          <mxGeometry height="80" width="40" x="1100" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Ghi nhận nhân viên&lt;br&gt;công ty thuê" vertex="1">
+          <mxGeometry height="58" width="240" x="672.6" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" edge="1" parent="1" source="c23" style="endArrow=none;html=1;" target="c24" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c26" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Cấp / hủy thẻ giữ xe" vertex="1">
+          <mxGeometry height="58" width="240" x="672.6" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="c27" edge="1" parent="1" source="c23" style="endArrow=none;html=1;" target="c26" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c28" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Times New Roman;fontSize=13;" value="NV kỹ thuật" vertex="1">
+          <mxGeometry height="80" width="40" x="1100" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="c29" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Kiểm tra tình trạng&lt;br&gt;phòng hằng năm" vertex="1">
+          <mxGeometry height="58" width="240" x="672.6" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="c30" edge="1" parent="1" source="c28" style="endArrow=none;html=1;" target="c29" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c31" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Lập phiếu phạt&lt;br&gt;thay đổi kết cấu" vertex="1">
+          <mxGeometry height="58" width="240" x="672.6" y="422" as="geometry" />
+        </mxCell>
+        <mxCell id="c32" edge="1" parent="1" source="c28" style="endArrow=none;html=1;" target="c31" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c33" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Times New Roman;fontSize=13;" value="Quản trị hệ thống" vertex="1">
+          <mxGeometry height="80" width="40" x="1100" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="c34" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Quản lý tầng, phòng&lt;br&gt;(giá thuê)" vertex="1">
+          <mxGeometry height="58" width="240" x="672.6" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="c35" edge="1" parent="1" source="c33" style="endArrow=none;html=1;" target="c34" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c36" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Quản lý dịch vụ&lt;br&gt;(điện, nước, internet...)" vertex="1">
+          <mxGeometry height="58" width="240" x="672.6" y="702" as="geometry" />
+        </mxCell>
+        <mxCell id="c37" edge="1" parent="1" source="c33" style="endArrow=none;html=1;" target="c36" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
